@@ -1,0 +1,40 @@
+深拷贝与浅拷贝
+a = [1,2,3,4,5]
+如果直接用b = a
+则之后对b的任何修改都会影响到a，反之亦然，这是因为 = 是浅拷贝，python实际上只是将a的引用地址给了b，所以会出现这种情况
+如果使用id(a),和id(b)验证会发现他们的地址都是一样的
+所以如果希望a和b两个互不干扰，需要使用.copy()
+也就是
+b = a.copy()
+
+for char_s, char_t in zip(s, t):
+char_s 是s的第一个字母，char_t是t的第一个字母，以此类推，可以同时遍历两个字符串
+
+.find()
+
+如果在字典里，则加一，如果不在，则加入并设置为1
+my_dict = {}
+
+for item in items:
+    if item in my_dict:
+        my_dict[item] += 1
+    else:
+        my_dict[item] = 1
+
+print(my_dict)
+
+第二个使用get的方法，号称很优雅，也没觉得哪优雅了
+# 初始化一个空字典
+my_dict = {}
+
+# 假设我们有一个可迭代的对象items，我们想要遍历它，并更新my_dict
+items = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+
+for item in items:
+    # 使用.get()获取item的当前计数，如果item不在字典中，返回0
+    count = my_dict.get(item, 0)
+    # 然后将计数加一，无论它之前是否存在
+    my_dict[item] = count + 1
+
+print(my_dict)
+
