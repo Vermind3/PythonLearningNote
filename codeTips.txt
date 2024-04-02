@@ -10,7 +10,7 @@ b = a.copy()
 for char_s, char_t in zip(s, t):
 char_s 是s的第一个字母，char_t是t的第一个字母，以此类推，可以同时遍历两个字符串
 
-.find()
+.find()用来查找首次出现，返回一个下标
 
 如果在字典里，则加一，如果不在，则加入并设置为1
 my_dict = {}
@@ -38,3 +38,36 @@ for item in items:
 
 print(my_dict)
 
+ while n > 0:
+    n, digit = divmod(n, 10)
+    total_sum += digit ** 2
+对一个整数每个位进行处理的时候，可以用divmod
+
+
+Enumerate
+假设你有一个购物清单，你想打印出每一项及其对应的编号，编号从 1 开始。
+
+不使用 enumerate 的代码可能会是这样的：
+shopping_list = ['bread', 'milk', 'butter']
+index = 1
+for item in shopping_list:
+    print(index, item)
+    index += 1
+
+而使用 enumerate 的代码则更为简洁：
+shopping_list = ['bread', 'milk', 'butter']
+for index, item in enumerate(shopping_list, start=1):
+    print(index, item)
+
+这两段代码都会输出：
+1 bread
+2 milk
+3 butter
+
+ elif char in isValidDict.values():
+    stack.append(char)
+    可以用.values()来获取dict里面的value
+
+if char in isValidDict and stack.pop() == isValidDict[char]:
+    continue
+在这种情况下，如果条件为真，则原stack会被去除一个，如果只是需要获取最后一个元素的话直接用[-1]就可以了
